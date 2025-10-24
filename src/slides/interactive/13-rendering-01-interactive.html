@@ -1,0 +1,66 @@
+<section class="slide-rendering-03">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Font <mark>Smoothing</mark></h5>
+  </header>
+  <example-wrapper class="font-smoothing--example">
+    <example>
+      <p>this is a text paragraph</p>
+    </example>
+    <small>
+      <input type="radio" name="font-smoothing" id="font-smoothing-none" value="none" />
+      <label for="font-smoothing-none">
+        none
+        <br />
+        Turn font smoothing off; display text with jagged sharp edges.
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="font-smoothing" id="font-smoothing-auto" value="auto" />
+      <label for="font-smoothing-auto">
+        auto
+        <br />
+        Let the browser decide (Uses subpixel anti-aliasing when available; this is the default)
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="font-smoothing" id="font-smoothing-antialiased" value="antialiased" />
+      <label for="font-smoothing-antialiased">
+        antialiased
+        <br />
+        Smooth the font on the level of the pixel, as opposed to the subpixel. Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter.
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="font-smoothing" id="font-smoothing-subpixel-antialiased" value="subpixel-antialiased" />
+      <label for="font-smoothing-subpixel-antialiased">
+        subpixel-antialiased
+        <br />
+        On most non-retina displays, this will give the sharpest text. (the risk is to have fonts looking a bit bolder than the default)
+      </label>
+    </small>
+  </example-wrapper>
+  <style>
+    .font-smoothing--example example {
+      --font-smoothing: none;
+      -webkit-font-smoothing: var(--font-smoothing);
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const textExample = document.querySelector('.font-smoothing--example example');
+      const inputs = document.querySelectorAll('.font-smoothing--example input[name="font-smoothing"]');
+
+      const fontSmoothingDefault = window.uiuxEngineering.getCustomProperty('--font-smoothing', textExample);
+
+      inputs.forEach((input) => {
+        input.checked = fontSmoothingDefault === input.value;
+
+        input.addEventListener('change', function () {
+          if (this.checked) {
+            textExample.style.setProperty('--font-smoothing', this.value);
+          }
+        });
+      });
+    });
+  </script>
+</section>

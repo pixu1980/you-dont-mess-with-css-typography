@@ -1,1 +1,2 @@
-import '@pixu-talks/core';
+import "@pixu-talks/core";
+import "./typography/typography";

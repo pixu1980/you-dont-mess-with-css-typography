@@ -1,0 +1,61 @@
+<section class="slide-rendering-02">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Font <mark>Kerning</mark></h5>
+  </header>
+  <example-wrapper class="font-kerning--example">
+    <example>
+      <p>this is a text paragraph</p>
+    </example>
+    <small>
+      <input type="radio" name="font-kerning" id="font-kerning-auto" value="auto" />
+      <label for="font-kerning-auto">
+        auto
+        <br />
+        The browser determines whether font kerning should be used or not. For example, some browsers will disable kerning on small fonts, since applying it could harm the readability of text.
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="font-kerning" id="font-kerning-normal" value="normal" />
+      <label for="font-kerning-normal">
+        normal
+        <br />
+        Font kerning information stored in the font must be applied. none Font kerning information stored in the font is disabled
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="font-kerning" id="font-kerning-none" value="none" />
+      <label for="font-kerning-none">
+        none
+        <br />
+        Font kerning information stored in the font is disabled.
+      </label>
+    </small>
+  </example-wrapper>
+  <style>
+    .font-kerning--example example {
+      --font-kerning: none;
+      font-family: serif;
+      font-kerning: var(--font-kerning);
+      -webkit-font-kerning: var(--font-kerning);
+
+      text-transform: uppercase;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const textExample = document.querySelector('.font-kerning--example example');
+      const inputs = document.querySelectorAll('.font-kerning--example input[name="font-kerning"]');
+      const fontKerningDefault = window.uiuxEngineering.getCustomProperty('--font-kerning', textExample);
+
+      inputs.forEach((input) => {
+        input.checked = fontKerningDefault === input.value;
+
+        input.addEventListener('change', function () {
+          if (this.checked) {
+            textExample.style.setProperty('--font-kerning', this.value);
+          }
+        });
+      });
+    });
+  </script>
+</section>

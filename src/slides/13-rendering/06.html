@@ -1,0 +1,36 @@
+<section class="slide-rendering-06">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Text <mark>Rendering</mark></h5>
+  </header>
+  <div class="text-rendering--example">
+    <example-wrapper>
+      <example>
+        <p>this is a text paragraph</p>
+      </example>
+      <example code>
+        <pre>
+          <code class="language-html hljs" data-trim data-line-numbers="|2">
+            <div class="example">
+              <p>this is a text paragraph</p>
+            </div>
+          </code>
+        </pre>
+        <pre>
+          <code class="language-scss hljs" data-trim data-line-numbers="|5">
+            .example {
+              padding: 1rem;
+              border: 0.2rem dashed #dedede;
+              border-radius: 0.8rem;
+              text-rendering: auto; // default
+        
+              p {
+                font-size: 2rem;
+                line-height: 1;
+              }
+            }
+          </code>
+        </pre>
+      </example>
+    </example-wrapper>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<section class="slide-font-face-11">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">How can we <mark>define</mark> a typeface?</h5>
+    <h6 data-id="slide-subtitle">@font-face allows us to create our custom <mark>font-family</mark></h6>
+  </header>
+  <pre data-id="font-face-animation">
+    <code class="language-scss hljs" data-trim data-line-numbers="3-9|11-18">
+      ...
+      
+      @font-face {
+        font-family: 'CustomFont';
+        src: url('path/to/CustomFont-Regular.woff2') format('woff2'),
+          url('path/to/CustomFont-Regular.woff') format('woff');
+        font-style: normal;
+        font-weight: 400;
+      }
+      
+      /* font style variation */
+      @font-face {
+        font-family: 'CustomFont';
+        src: url('path/to/CustomFont-Regular-Italic.woff2') format('woff2'),
+          url('path/to/CustomFont-Regular-Italic.woff') format('woff');
+        font-style: italic;
+        font-weight: 400;
+      }
+      
+      ...
+    </code>
+  </pre>
+  <h6 class="fragment fade-up">(NOTE: be careful, use only fonts you are licensed to use)</h6>
+</section>

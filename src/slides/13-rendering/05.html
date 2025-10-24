@@ -1,0 +1,78 @@
+<section class="slide-rendering-05">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Font <mark>Kerning</mark></h5>
+  </header>
+  <example-wrapper class="font-kerning--example">
+    <!-- <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="fk-auto">
+          <p>paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-3">
+              .example {
+                // Browser determines if font-kerning should be used or not.
+                font-kerning: auto;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side> -->
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="fk-none">
+          <p>paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-3">
+              .example {
+                // Font Kerning is disabled
+                font-kerning: none;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="fk-normal">
+          <p>paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-3">
+              .example {
+                // Font Kerning is enabled
+                font-kerning: normal;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+  </example-wrapper>
+  <aside class="notes">
+    <small>
+      <pre>
+        <code class="language-scss hljs" data-trim>
+          .example {
+            // Browser determines if font-kerning should be used or not.
+            // Some browsers will disable kerning on small fonts,
+            // since applying it could harm the readability of text.
+            font-kerning: auto;
+          }
+        </code>
+      </pre>
+    </small>
+  </aside>
+</section>

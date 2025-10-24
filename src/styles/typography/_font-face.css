@@ -1,0 +1,118 @@
+.fragment.visible {
+	.staggered-images {
+		margin-top: 5rem;
+
+		img {
+			--index: 0;
+			--stagger-delay: calc(650ms * var(--index));
+			opacity: 0;
+			margin: 0;
+
+			animation: staggered-opacity 250ms var(--stagger-delay) ease-in-out;
+			animation-fill-mode: forwards;
+		}
+	}
+}
+
+@keyframes staggered-opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.2;
+	}
+}
+
+.typeface-font--example {
+	width: 35rem;
+	margin: 0 auto;
+	color: white;
+	text-align: left;
+
+	p {
+		width: 100%;
+
+		label {
+			float: right;
+			text-transform: uppercase;
+			background: #999387;
+			color: #2c292a;
+			font-size: 10pt;
+			line-height: 10pt;
+			font-weight: 400;
+			border-radius: 0.4rem;
+			vertical-align: baseline;
+			padding: 0.5rem 1rem;
+		}
+	}
+
+	div {
+		padding: 2rem;
+
+		> div {
+			border: 1px solid #999387;
+			margin: 0 -2rem;
+
+			+ p {
+				margin-top: 1.5rem;
+			}
+		}
+
+		p {
+			font-size: 14pt;
+			font-weight: 400;
+			line-height: 16pt;
+
+			&.text-12pt {
+				font-size: 12pt;
+			}
+
+			&.text-14pt {
+				&.italic {
+					font-size: 1;
+				}
+
+				&.light {
+					font-weight: 200;
+				}
+			}
+
+			+ p {
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+
+.font-face--example {
+	example {
+		&.ff-variation-1 {
+			p {
+				font-family: var(--font-family--base);
+				font-weight: 100;
+			}
+		}
+
+		&.ff-variation-2 {
+			p {
+				font-family: var(--font-family--base);
+				font-weight: 300;
+				font-style: italic;
+			}
+		}
+
+		&.ff-variation-3 {
+			p {
+				font-family: var(--font-family--base);
+				font-weight: 500;
+			}
+		}
+
+		&.ff-variation-4 {
+			p {
+				font-family: var(--font-family--base);
+				font-weight: 900;
+			}
+		}
+	}
+}

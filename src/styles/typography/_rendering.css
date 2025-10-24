@@ -1,0 +1,96 @@
+.font-smoothing--example,
+.font-kerning--example,
+.text-rendering--example {
+	side-by-side {
+		--l: 40%;
+		--r: 60%;
+	}
+}
+
+.font-smoothing--example {
+	example {
+		--font-smoothing: auto;
+		-webkit-font-smoothing: var(--font-smoothing);
+
+		--moz-font-smoothing: auto;
+		-moz-osx-font-smoothing: var(--moz-font-smoothing);
+
+		p {
+			font-size: 3.4rem;
+		}
+
+		&.fs-none {
+			--font-smoothing: none;
+			--moz-font-smoothing: none;
+		}
+
+		&.fs-auto {
+			--font-smoothing: auto;
+			--moz-font-smoothing: auto;
+		}
+
+		&.fs-aa {
+			--font-smoothing: antialiased;
+		}
+
+		&.fs-subpixel-aa {
+			--font-smoothing: subpixel-antialiased;
+			--moz-font-smoothing: greyscale;
+		}
+	}
+}
+
+side-by-side.font-kerning {
+	> * {
+		display: flex;
+		flex-flow: column;
+	}
+}
+
+.font-kerning--example {
+	example {
+		--font-kerning: none;
+
+		p {
+			font-size: 3.4rem;
+			font-family: Tahoma, Geneva, Verdana, sans-serif;
+			font-kerning: var(--font-kerning);
+			text-transform: uppercase;
+
+			&::first-letter {
+				background-color: #fdd45b;
+			}
+		}
+
+		&.fk-normal {
+			--font-kerning: normal;
+		}
+
+		&.fk-auto {
+			--font-kerning: auto;
+		}
+	}
+}
+
+.text-rendering--example {
+	example {
+		--text-rendering: auto;
+
+		p {
+			text-rendering: var(--text-rendering);
+			text-transform: uppercase;
+		}
+
+		&.tr-optimizeSpeed {
+			--text-rendering: optimizeSpeed;
+		}
+
+		&.tr-optimizeLegibility {
+			--text-rendering: optimizeLegibility;
+		}
+
+		&.tr-geometricPrecision {
+			--text-rendering: geometricPrecision;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+<section class="slide-font-face-02">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">CSS is our <s>font</s> <mark>front door</mark> ;-)</h5>
+    <h6 data-id="slide-subtitle">A common piece of code to start from</h6>
+  </header>
+  <pre data-id="font-face-animation">
+    <code class="language-scss hljs" data-trim data-line-numbers>
+      html {
+        /* 
+          16px/10px = 0.625, expressed in em
+          makes the font-size reactive to browser settings
+          and makes 1rem = 10px,
+          allowing to use rems as a simple division base-10 value
+        */
+        font-size: 0.625em;      
+      }
+      
+      body {
+        font-family: Verdana, sans-serif;
+        font-size: 1.6rem;
+        line-height: 2rem; 
+      }
+      
+      ...
+    </code>
+  </pre>
+</section>

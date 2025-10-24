@@ -1,0 +1,95 @@
+@keyframes variations {
+	0% {
+		font-weight: 300;
+		font-variation-settings:
+			"CASL" 0,
+			"snlt" 0,
+			"CSRV" 0;
+	}
+
+	37.5% {
+		font-weight: 1000;
+		font-variation-settings:
+			"CASL" 1,
+			"snlt" 0,
+			"CSRV" 0;
+	}
+
+	60% {
+		font-weight: 500;
+		font-variation-settings:
+			"CASL" 0.5,
+			"snlt" 0,
+			"CSRV" 0;
+	}
+
+	100% {
+		font-weight: 300;
+		font-variation-settings:
+			"CASL" 0,
+			"snlt" 0,
+			"CSRV" 0;
+	}
+}
+
+.variable-fonts--animation {
+	font-family: var(--font-family--variable--rec-vf);
+
+	span {
+		font-size: 4.5rem;
+		line-height: 5rem;
+		font-weight: 300;
+	}
+
+	.breathing {
+		span {
+			--index: 0;
+			--stagger-delay: calc(150ms * var(--index));
+
+			font-variation-settings:
+				"CASL" 0,
+				"snlt" 0,
+				"CSRV" 0;
+
+			animation: none;
+			will-change: font-weight, font-variation-settings;
+		}
+	}
+}
+
+.slide-variable-fonts-03.present {
+	.variable-fonts--animation {
+		.breathing {
+			span {
+				animation: variations 4s var(--stagger-delay) linear infinite;
+			}
+		}
+	}
+}
+
+.variable-fonts--example {
+	example {
+		p {
+			--font-var--size: 3rem;
+			--font-var--height: 1.2;
+			--font-var--mono: 0.5;
+			--font-var--casual: 0;
+			--font-var--weight: 400;
+			--font-var--slant: 0;
+			--font-var--cursive: 0;
+
+			font-family: var(--font-family--variable--rec-vf);
+			font-size: var(--font-var--size);
+			font-variation-settings:
+				"MONO" var(--font-var--mono),
+				"CASL" var(--font-var--casual),
+				"wght" var(--font-var--weight),
+				"slnt" var(--font-var--slant),
+				"CRSV" var(--font-var--cursive);
+
+			line-height: var(--font-var--height);
+			white-space: nowrap;
+			transition: none;
+		}
+	}
+}

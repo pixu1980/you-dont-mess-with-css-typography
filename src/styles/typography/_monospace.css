@@ -1,0 +1,22 @@
+[class^="slide-monospace-font"] {
+	.monospace-font--table {
+		height: 30rem;
+
+		table {
+			width: 52rem;
+			height: 30rem;
+			margin: auto;
+			margin: auto;
+			font-size: 2rem;
+
+			th,
+			td {
+				padding: 0.7rem 1rem;
+			}
+		}
+	}
+
+	[data-id="table-monospace"] {
+		font-family: var(--font-family--code--monospace);
+	}
+}

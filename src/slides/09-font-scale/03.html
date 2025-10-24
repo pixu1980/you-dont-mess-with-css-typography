@@ -1,0 +1,54 @@
+<section class="slide-font-scale-03">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">A <mark>modern</mark> approach to font scale</h5>
+    <h6 data-id="slide-subtitle"><mark>ratio</mark> is what we need if we want to achieve good <mark>proportions</mark> in font scale</h6>
+  </header>
+  <side-by-side class="font-scale-modern">
+    <left>
+      <div class="font-scale--example">
+        <h1 class="fragment">Heading 1</h1>
+        <h2 class="fragment">Heading 2</h2>
+        <h3 class="fragment">Heading 3</h3>
+        <h4 class="fragment">Heading 4</h4>
+        <h5 class="fragment">Heading 5</h5>
+        <h6 class="fragment">Heading 6</h6>
+        <p class="fragment">Paragraph/Plain Text</p>
+      </div>
+    </left>
+    <right>
+      <div class="font-scale--code fragment">
+        <pre data-id="font-scale-animation">
+          <code class="language-scss hljs" data-trim data-line-numbers="|3-5|7,8,10|12-15|17-19">
+            @use 'sass:math';
+            
+            $font-ratio: 1.25; /* major third 4:5 */
+            /* 
+              16px/10px = 0.625, expressed in em
+              makes the font-size reactive to browser settings
+              and makes 1rem = 10px,
+              allowing to use rems as a simple division base-10 value
+            */
+            $font-root: 0.625em;      
+            $font-base: 1.6rem;
+  
+            html {
+              font-size: $font-root;
+              color: white;
+            }
+            
+            body {
+              font-size: $font-base;
+              line-height: $font-ratio;
+            }
+            
+            h1, h2, h3, h4, h5, h6, p {
+              margin: calc(#{$font-base} * #{$font-ratio}) 0 0;
+            }
+  
+            ...
+            </code>
+        </pre>
+      </div>
+    </right>
+  </side-by-side>
+</section>

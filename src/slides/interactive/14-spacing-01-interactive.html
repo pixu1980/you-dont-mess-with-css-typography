@@ -1,0 +1,63 @@
+<section class="slide-spacing-01">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Letter <mark>Spacing</mark></h5>
+  </header>
+  <example-wrapper class="letter-spacing--example">
+    <example>
+      <p>this is a text paragraph</p>
+    </example>
+    <small>
+      <input type="radio" name="letter-spacing" id="letter-spacing-normal" value="normal" />
+      <label for="letter-spacing-normal">
+        normal
+        <br />
+        Font kerning information stored in the font must be applied. none Font kerning information stored in the font is disabled
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="letter-spacing" id="letter-spacing-length" value="length" />
+      <input type="number" name="letter-spacing-length-amount" id="letter-spacing-length-amount" step="1" value="10" />
+      <label for="letter-spacing-length">
+        length
+        <br />
+        Defines an extra space between characters (negative values are allowed, portions of pixels are allowed).
+      </label>
+    </small>
+  </example-wrapper>
+  <style>
+    .letter-spacing--example example {
+      --letter-spacing: normal;
+      letter-spacing: var(--letter-spacing);
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const textExample = document.querySelector('.letter-spacing--example example');
+      const inputs = document.querySelectorAll('.letter-spacing--example input[name="letter-spacing"]');
+      const inputLength = document.querySelector('.letter-spacing--example input[name="letter-spacing-length-amount"]');
+      const letterSpacingDefault = window.uiuxEngineering.getCustomProperty('--letter-spacing', textExample);
+
+      inputs.forEach((input) => {
+        input.checked = letterSpacingDefault === input.value;
+
+        input.addEventListener('change', function () {
+          if (this.checked) {
+            if (this.value === 'normal') {
+              textExample.style.setProperty('--letter-spacing', this.value);
+            } else {
+              textExample.style.setProperty('--letter-spacing', inputLength.value + 'px');
+            }
+          }
+        });
+      });
+
+      inputLength.addEventListener('change', function () {
+        const letterSpacingDefault = window.uiuxEngineering.getCustomProperty('--letter-spacing', textExample);
+
+        if (letterSpacingDefault !== 'normal') {
+          textExample.style.setProperty('--letter-spacing', inputLength.value + 'px');
+        }
+      });
+    });
+  </script>
+</section>

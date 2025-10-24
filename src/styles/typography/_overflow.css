@@ -1,0 +1,60 @@
+.text-overflow--example {
+	example:not([code]) {
+		box-sizing: border-box;
+		width: 110px;
+		height: 110px;
+		aspect-ratio: 1 / 1;
+		font-size: 3.2rem;
+		word-spacing: 1rem;
+		padding: 0.7rem;
+		line-height: 1;
+		text-align: left;
+		text-transform: uppercase;
+
+		&.active {
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.line-clamping--example {
+	example:not([code]) {
+		--font-size: 2.2rem;
+		--line-height: 3.2rem;
+		--lines-to-show: 3;
+		--gutter: 1rem;
+
+		display: block; /* Fallback for non-webkit */
+		display: -webkit-box;
+		box-sizing: border-box;
+		width: 50%;
+		padding: 0.2rem var(--gutter);
+		margin: 0 auto;
+
+		font-size: var(--font-size);
+		line-height: var(--line-height);
+		text-align: left;
+
+		&.active {
+			max-height: calc(
+				var(--font-size) *
+				var(--line-height) *
+				var(--lines-to-show)
+			); /* Fallback for non-webkit*/
+			-webkit-line-clamp: var(--lines-to-show);
+			line-clamp: var(--lines-to-show);
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+
+.hyphenation--example {
+	example:not([code]) {
+		word-break: break-all;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+}

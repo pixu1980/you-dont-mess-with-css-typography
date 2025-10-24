@@ -1,0 +1,84 @@
+<section class="slide-spacing-03">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Letter <mark>Spacing</mark></h5>
+  </header>
+  <example-wrapper class="letter-spacing--example">
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="ls-normal">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-4">
+              .example {
+                // Font Kerning information in the font
+                // will be applied
+                letter-spacing: normal;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="ls-rem">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-3">
+              .example {
+                // Defines an extra space between characters
+                letter-spacing: 0.5rem;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="ls-negative">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-3">
+              .example {
+                // Negative values are allowed
+                letter-spacing: -2px;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="ls-portion">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-3">
+              .example {
+                // Portions of pixels are allowed
+                letter-spacing: 0.75px;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+  </example-wrapper>
+</section>

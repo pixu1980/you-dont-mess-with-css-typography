@@ -1,0 +1,113 @@
+<section class="slide-rendering-07">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Text <mark>Rendering</mark></h5>
+  </header>
+  <example-wrapper class="text-rendering--example">
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="tr-auto">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-4">
+              .example {
+                // Browsers decide when to optimize for speed, legibility, 
+                // and geometric precision while drawing text. (default)
+                text-rendering: auto;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="tr-optimizeSpeed">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-5">
+              .example {
+                // Browser emphasizes speed over legibility
+                // and geometric precision when drawing text
+                // (this disables kerning and ligatures)
+                text-rendering: optimizeSpeed;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="tr-optimizeLegibility">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-5">
+              .example {
+                // Browser emphasizes legibility over speed
+                // and geometric precision
+                // (this enables kerning and ligatures)
+                text-rendering: optimizeLegibility;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="tr-geometricPrecision">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-4">
+              .example {
+                // Browser emphasizes geometric precision over speed
+                // and legibility
+                text-rendering: geometricPrecision
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+  </example-wrapper>
+  <aside class="notes">
+    <small>
+      <pre>
+        <code class="language-scss hljs" data-trim>
+          .example {
+            // The browser makes educated guesses about when to optimize for speed, legibility, and geometric precision while
+            // drawing text. For differences in how this value is interpreted by the browser, see the compatibility table.
+            text-rendering: auto;
+          }
+        </code>
+      </pre>
+      <pre>
+        <code class="language-scss hljs" data-trim>
+          .example {
+            // Browser emphasizes geometric precision over rendering speed
+            // and legibility
+            // Certain aspects of fonts — such
+            // as kerning — don't scale linearly. So this value can make text using those fonts look good
+            text-rendering: geometricPrecision
+          }
+        </code>
+      </pre>
+    </small>
+  </aside>
+</section>

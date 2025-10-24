@@ -1,0 +1,38 @@
+<section class="slide-overflow-04">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">... what if <mark>every word</mark> is larger than the box?</h5>
+    <h6 data-id="slide-subtitle">will our friend CSS <mark>still be awesome</mark>?</h6>
+  </header>
+  <div class="text-overflow--example">
+    <example-wrapper>
+      <example class="active">CSSeses ISeses AWESOME</example>
+      <example code>
+        <pre>
+          <code class="language-html hljs" data-trim data-line-numbers="|2">
+            <div class="example">
+              CSSeses ISeses AWESOME
+            </div>
+          </code>
+        </pre>
+        <pre>
+          <code class="language-scss hljs" data-trim data-line-numbers="|4-5">
+            .example {
+              ...
+              
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          </code>
+        </pre>
+      </example>
+    </example-wrapper>
+  </div>
+</section>
+<!-- 
+<section class="slide-overflow-02">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">CSS is <mark>Awesome</mark></h5>
+  </header>
+  v
+  <p class="fragment">https://css-tricks.com/css-is-awesome/ https://codepen.io/martinwolf/pen/qlFdp</p>
+</section> -->

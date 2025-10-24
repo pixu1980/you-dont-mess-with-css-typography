@@ -1,0 +1,47 @@
+[class^="slide-font-stacks"] {
+	.font-stacks--example {
+		flex-flow: column;
+		margin-top: 1.5rem;
+
+		img {
+			width: 100%;
+			max-width: fit-content;
+			margin: 0;
+		}
+
+		p {
+			font-size: 2rem;
+			margin: 0;
+			text-align: left;
+		}
+
+		.cons,
+		.pros {
+			display: flex;
+			flex-flow: row;
+			align-items: center;
+			justify-content: center;
+			margin-top: 1rem;
+
+			&.cons {
+				p {
+					color: var(--color-red-400);
+					margin-left: 1rem;
+				}
+			}
+			&.pros {
+				p {
+					color: var(--color-green-400);
+				}
+			}
+
+			img {
+				width: 10rem;
+			}
+
+			p {
+				margin-left: 2.8rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+<section class="slide-font-face-09">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">How can we <mark>define</mark> a typeface?</h5>
+    <h6 data-id="slide-subtitle">@font-face allows us to create our custom <mark>font-family</mark></h6>
+  </header>
+  <pre data-id="font-face-animation">
+    <code class="language-scss hljs" data-trim data-line-numbers="4|11">
+      ...
+      
+      body {
+        font-family: 'CustomFont', FallbackFont, sans-serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2rem; 
+      }
+      
+      @font-face {
+        font-family: 'CustomFont';
+        src: url('path/to/CustomFont-Regular.woff2') format('woff2'),
+          url('path/to/CustomFont-Regular.woff') format('woff');
+        font-style: normal;
+        font-weight: 400;
+      }
+      
+      ...
+    </code>
+  </pre>
+  <h6 class="fragment">by specifying the same <mark>font-family</mark> in every <mark>@font-face</mark> definition<br />we're defining a <mark>typeface</mark></h6>
+</section>

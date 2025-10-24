@@ -1,0 +1,45 @@
+.letter-spacing--example,
+.word-spacing--example {
+	side-by-side {
+		--l: 40%;
+		--r: 60%;
+	}
+}
+
+.letter-spacing--example {
+	example {
+		--letter-spacing: normal;
+		letter-spacing: var(--letter-spacing);
+
+		&.ls-rem {
+			--letter-spacing: 0.5rem;
+		}
+
+		&.ls-negative {
+			--letter-spacing: -2px;
+		}
+
+		&.ls-portion {
+			--letter-spacing: 0.75px;
+		}
+	}
+}
+
+.word-spacing--example {
+	example {
+		--word-spacing: normal;
+		word-spacing: var(--word-spacing);
+
+		&.ws-rem {
+			--word-spacing: 1rem;
+		}
+
+		&.ws-negative {
+			--word-spacing: -4px;
+		}
+
+		&.ws-portion {
+			--word-spacing: 1.75px;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+<section class="slide-rendering-02">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Font <mark>Smoothing</mark></h5>
+  </header>
+  <example-wrapper class="font-smoothing--example">
+    <side-by-side height="auto">
+      <left flex="right middle">
+        <div>
+          <img src="./assets/anti-aliasing.png" alt="Anti Aliasing" />
+        </div>
+      </left>
+      <right flex="left middle">
+        <example-wrapper>
+          <example>
+            <p>this is a text paragraph</p>
+          </example>
+          <example code>
+            <pre>
+                <code class="language-html hljs" data-trim data-line-numbers="|2">
+                  <div class="example">
+                    <p>this is a text paragraph</p>
+                  </div>
+                </code>
+              </pre>
+            <pre>
+                <code class="language-scss hljs" data-trim data-line-numbers="|5-6">
+                  .example {
+                    padding: 1rem;
+                    border: 0.2rem dashed #dedede;
+                    border-radius: 0.8rem;
+                    -webkit-font-smoothing: auto; // default
+                    -moz-osx-font-smoothing: auto; // default
+      
+                    p {
+                      font-size: 2rem;
+                      line-height: 1;
+                    }
+                  }
+                </code>
+              </pre>
+          </example>
+        </example-wrapper>
+      </right>
+    </side-by-side>
+  </example-wrapper>
+</section>

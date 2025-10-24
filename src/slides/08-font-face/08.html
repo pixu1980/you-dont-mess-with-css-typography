@@ -1,0 +1,32 @@
+<section class="slide-font-face-08">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">How can we <mark>define</mark> a typeface?</h5>
+    <h6 data-id="slide-subtitle">@font-face allows us to create our custom <mark>font-family</mark></h6>
+  </header>
+  <pre data-id="font-face-animation">
+    <code class="language-scss hljs" data-trim data-line-numbers="6">
+      html {
+        /* 
+          16px/10px = 0.625, expressed in em
+          makes the font-size reactive to browser settings
+          and makes 1rem = 10px,
+          allowing to use rems as a simple division base-10 value
+        */
+        font-size: 0.625em;      
+      }
+      
+      body {
+        font-family: 'CustomFont', FallbackFont, sans-serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2rem; 
+      }
+      
+      ...
+    </code>
+  </pre>
+  <h6 class="fragment">
+    Browsers will try to use the font you specified first (<mark>CustomFont</mark>, in this case).<br />
+    If CustomFont is not available, browsers will <mark>fallback</mark> fonts in the list from left to right.
+  </h6>
+</section>

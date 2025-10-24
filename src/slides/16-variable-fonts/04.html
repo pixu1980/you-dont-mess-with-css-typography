@@ -1,0 +1,172 @@
+<section class="slide-variable-fonts-04 no-print">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title"><mark>Variable</mark> Fonts</h5>
+  </header>
+  <div class="variable-fonts--example interactive">
+    <example-wrapper>
+      <example contenteditable="true">
+        <p data-id="variable-fonts--example--p">
+          <span>this is a great text example</span>
+          <br /><span><>|"£€$%&/()=\'^[]@#¶,;.:-_!?</span>
+        </p>
+      </example>
+      <side-by-side>
+        <left>
+          <example form>
+            <label>
+              <div>Size: Small (1.5rem) or Big (3.5rem), step (0.1)</div>
+              <input name="fontSizeSlider" min="1.5" max="3.5" step="0.1" type="range" />
+            </label>
+            <label>
+              <div>Monospace: Sans (0: natural-width) or Mono (1: fixed-width), step (0.01)</div>
+              <input name="monoSlider" min="0" max="1" step="0.01" type="range" />
+            </label>
+            <label>
+              <div>Casual: Linear (0) to Casual (1), step (0.01)</div>
+              <input name="casualSlider" min="0" max="1" step="0.01" type="range" />
+            </label>
+            <label>
+              <div>Weight: Light (300) to ExtraBlack (1000), step (1)</div>
+              <input name="weightSlider" min="300" max="1000" value="800" step="1" type="range" />
+            </label>
+            <label>
+              <div>Slant: 0 to -15 degrees, step 0.1, auto cursive at -14</div>
+              <input name="slantSlider" min="-15" max="0" step="0.1" type="range" />
+            </label>
+            <label>
+              <div>Cursive: always roman (0), auto substitution (0.5), or always cursive (1)</div>
+              <fieldset id="tester--CRSV-axis">
+                <input type="radio" name="cursiveRadio" id="cursiveRadioOff" value="0" />
+                <label for="cursiveRadioOff">off</label>
+                <input type="radio" name="cursiveRadio" id="cursiveRadioAuto" value="0.5" />
+                <label for="cursiveRadioAuto">auto</label>
+                <input type="radio" name="cursiveRadio" id="cursiveRadioOn" value="1" />
+                <label for="cursiveRadioOn">on</label>
+              </fieldset>
+            </label>
+          </example>
+        </left>
+        <right>
+          <example code>
+            <pre>
+              <code class="language-scss hljs" data-trim data-line-numbers>
+                .example {
+                  --font-var--size: 3rem;
+                  --font-var--height: 1.2;
+                  --font-var--mono: 0.5;
+                  --font-var--casual: 0;
+                  --font-var--weight: 400;
+                  --font-var--slant: 0;
+                  --font-var--cursive: 0;
+            
+                  font-family: var(--font-family--variable--rec-vf);
+                  font-size: var(--font-var--size);
+                  font-variation-settings: 
+                    'MONO' var(--font-var--mono), 
+                    'CASL' var(--font-var--casual),
+                    'wght' var(--font-var--weight), 
+                    'slnt' var(--font-var--slant), 
+                    'CRSV' var(--font-var--cursive);
+            
+                  line-height: var(--font-var--height);
+                }
+              </code>
+            </pre>
+          </example>
+        </right>
+      </side-by-side>
+    </example-wrapper>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const variableFonts = document.querySelector('.variable-fonts--example.interactive');
+      const variableFontsExample = variableFonts.querySelector('example[contenteditable] p');
+      const variableFontsExampleCode = variableFonts.querySelector('example[code] code');
+
+      const variableFontsInputFontSizeSlider = variableFonts.querySelector('input[name="fontSizeSlider"]');
+
+      const variableFontsValues = {
+        size: parseFloat(window.uiuxEngineering.getCustomProperty('--font-var--size', variableFontsExample)),
+        mono: parseFloat(window.uiuxEngineering.getCustomProperty('--font-var--mono', variableFontsExample)),
+        casual: parseFloat(window.uiuxEngineering.getCustomProperty('--font-var--casual', variableFontsExample)),
+        weight: parseFloat(window.uiuxEngineering.getCustomProperty('--font-var--weight', variableFontsExample)),
+        slant: parseFloat(window.uiuxEngineering.getCustomProperty('--font-var--slant', variableFontsExample)),
+        cursive: parseFloat(window.uiuxEngineering.getCustomProperty('--font-var--cursive', variableFontsExample)),
+      };
+
+      const updateHighlighJsCode = (variableName, newValue, oldValue) => {
+        [...variableFontsExampleCode.querySelectorAll('.hljs-ln-line')]
+          .filter((hlJsLine) => hlJsLine.innerText.includes(variableName + ': ' + oldValue + ';'))
+          .forEach((hlJsLine) => {
+            hlJsLine.querySelector('.hljs-number').innerText = newValue;
+          });
+      };
+
+      // --font-var--size
+      variableFontsInputFontSizeSlider.value = variableFontsValues.size;
+
+      variableFontsInputFontSizeSlider.addEventListener('input', function (e) {
+        variableFontsExample.style.setProperty('--font-var--size', this.value + 'rem');
+        updateHighlighJsCode('--font-var--size', this.value + 'rem', variableFontsValues.size + 'rem');
+        variableFontsValues.size = this.value;
+      });
+
+      // --font-var--mono
+      const variableFontsInputMonoSlider = variableFonts.querySelector('input[name="monoSlider"]');
+
+      variableFontsInputMonoSlider.value = variableFontsValues.mono;
+
+      variableFontsInputMonoSlider.addEventListener('input', function () {
+        variableFontsExample.style.setProperty('--font-var--mono', this.value);
+        updateHighlighJsCode('--font-var--mono', this.value, variableFontsValues.mono);
+        variableFontsValues.mono = this.value;
+      });
+
+      // --font-var--casual
+      const variableFontsInputCasualSlider = variableFonts.querySelector('input[name="casualSlider"]');
+
+      variableFontsInputCasualSlider.value = variableFontsValues.casual;
+
+      variableFontsInputCasualSlider.addEventListener('input', function () {
+        variableFontsExample.style.setProperty('--font-var--casual', this.value);
+        updateHighlighJsCode('--font-var--casual', this.value, variableFontsValues.casual);
+        variableFontsValues.casual = this.value;
+      });
+
+      // --font-var--weight
+      const variableFontsInputWeightSlider = variableFonts.querySelector('input[name="weightSlider"]');
+
+      variableFontsInputWeightSlider.value = variableFontsValues.weight;
+
+      variableFontsInputWeightSlider.addEventListener('input', function () {
+        variableFontsExample.style.setProperty('--font-var--weight', this.value);
+        updateHighlighJsCode('--font-var--weight', this.value, variableFontsValues.weight);
+        variableFontsValues.weight = this.value;
+      });
+
+      // --font-var--slant
+      const variableFontsInputSlantSlider = variableFonts.querySelector('input[name="slantSlider"]');
+
+      variableFontsInputSlantSlider.value = variableFontsValues.slant;
+
+      variableFontsInputSlantSlider.addEventListener('input', function () {
+        variableFontsExample.style.setProperty('--font-var--slant', this.value);
+        updateHighlighJsCode('--font-var--slant', this.value, variableFontsValues.slant);
+        variableFontsValues.slant = this.value;
+      });
+
+      // --font-var--cursive
+      const variableFontsInputCursiveRadios = variableFonts.querySelectorAll('input[name="cursiveRadio"]');
+
+      variableFontsInputCursiveRadios.forEach((variableFontsInputCursiveRadio) => {
+        variableFontsInputCursiveRadio.checked = variableFontsValues.cursive === variableFontsInputCursiveRadio.value;
+
+        variableFontsInputCursiveRadio.addEventListener('change', function () {
+          variableFontsExample.style.setProperty('--font-var--cursive', this.value);
+          updateHighlighJsCode('--font-var--cursive', this.value, variableFontsValues.cursive);
+          variableFontsValues.cursive = this.value;
+        });
+      });
+    });
+  </script>
+</section>

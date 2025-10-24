@@ -1,0 +1,85 @@
+.horizontal-alignment--example,
+.vertical-alignment--example {
+	side-by-side {
+		--l: 40%;
+		--r: 60%;
+	}
+}
+
+.horizontal-alignment--example {
+	example {
+		--text-align: left;
+		text-align: var(--text-align);
+
+		p {
+			font-size: 1.5rem;
+			vertical-align: middle;
+		}
+
+		&.text-center {
+			--text-align: center;
+		}
+
+		&.text-right {
+			--text-align: right;
+		}
+
+		&.text-justify {
+			--text-align: justify;
+		}
+	}
+}
+
+.vertical-alignment--example {
+	example {
+		--vertical-align: baseline;
+		min-height: 7rem;
+		padding: 0;
+
+		line-height: 7rem;
+		vertical-align: middle;
+
+		p {
+			font-size: 1.5rem;
+			vertical-align: middle;
+			line-height: 7rem;
+
+			span {
+				vertical-align: var(--vertical-align);
+				line-height: 1;
+			}
+		}
+
+		&.valign-top {
+			--vertical-align: top;
+		}
+
+		&.valign-middle {
+			--vertical-align: middle;
+		}
+
+		&.valign-bottom {
+			--vertical-align: bottom;
+		}
+
+		&.valign-baseline {
+			--vertical-align: baseline;
+		}
+
+		&.valign-sub {
+			--vertical-align: sub;
+		}
+
+		&.valign-super {
+			--vertical-align: super;
+		}
+
+		&.valign-text-top {
+			--vertical-align: text-top;
+		}
+
+		&.valign-text-bottom {
+			--vertical-align: text-bottom;
+		}
+	}
+}

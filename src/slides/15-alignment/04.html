@@ -1,0 +1,37 @@
+<section class="slide-alignment-04">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title"><mark>Vertical</mark> Align</h5>
+  </header>
+  <div class="vertical-alignment--example">
+    <example-wrapper>
+      <example>
+        <p>this is a text paragraph. <span>this is a span</span></p>
+      </example>
+      <example code>
+        <pre>
+          <code class="language-html hljs" data-trim data-line-numbers="|2">
+            <div class="example">
+              <p>this is a text paragraph. <span>this is a span</span></p>
+            </div>
+          </code>
+        </pre>
+        <pre>
+          <code class="language-scss hljs" data-trim data-line-numbers="|4-5,10">
+            .example {
+              ...
+              
+              min-height: 5rem;
+              line-height: 5rem;
+              
+              ...
+        
+              p {
+                vertical-align: baseline;
+              }
+            }
+          </code>
+        </pre>
+      </example>
+    </example-wrapper>
+  </div>
+</section>

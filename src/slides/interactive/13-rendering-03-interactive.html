@@ -1,0 +1,70 @@
+<section class="slide-rendering-01">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Text <mark>Rendering</mark></h5>
+  </header>
+  <example-wrapper class="text-rendering--example">
+    <example>
+      <p>this is a text paragraph</p>
+    </example>
+    <small>
+      <input type="radio" name="text-rendering" id="text-rendering-auto" value="auto" />
+      <label for="text-rendering-auto">
+        auto
+        <br />
+        The browser makes educated guesses about when to optimize for speed, legibility, and geometric precision while drawing text. For differences in how this value is interpreted by the browser,
+        see the compatibility table.
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="text-rendering" id="text-rendering-optimize-speed" value="optimizeSpeed" />
+      <label for="text-rendering-optimize-speed">
+        optimizeSpeed
+        <br />
+        The browser emphasizes rendering speed over legibility and geometric precision when drawing text. It disables kerning and ligatures.
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="text-rendering" id="text-rendering-optimize-legibility" value="optimizeLegibility" />
+      <label for="text-rendering-optimize-legibility">
+        optimizeLegibility
+        <br />
+        The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures.
+      </label>
+    </small>
+    <small>
+      <input type="radio" name="text-rendering" id="text-rendering-geometric-precision" value="geometricPrecision" />
+      <label for="text-rendering-geometric-precision">
+        geometricPrecision
+        <br />
+        The browser emphasizes geometric precision over rendering speed and legibility. Certain aspects of fonts — such as kerning — don't scale linearly. So this value can make text using those fonts
+        look good.
+      </label>
+    </small>
+  </example-wrapper>
+  <style>
+    .text-rendering--example example {
+      --text-rendering: auto;
+      text-rendering: var(--text-rendering);
+
+      text-transform: uppercase;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const textExample = document.querySelector('.text-rendering--example example');
+      const inputs = document.querySelectorAll('.text-rendering--example input[name="text-rendering"]');
+
+      const fontSmoothingDefault = window.uiuxEngineering.getCustomProperty('--text-rendering', textExample);
+
+      inputs.forEach((input) => {
+        input.checked = fontSmoothingDefault === input.value;
+
+        input.addEventListener('change', function () {
+          if (this.checked) {
+            textExample.style.setProperty('--text-rendering', this.value);
+          }
+        });
+      });
+    });
+  </script>
+</section>

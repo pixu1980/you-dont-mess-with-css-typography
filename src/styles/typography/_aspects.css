@@ -1,0 +1,125 @@
+[class*="slide-aspects"] {
+	side-by-side {
+		> * {
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+		}
+
+		h6 {
+			display: block;
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 3rem;
+			line-height: 4rem;
+			color: var(--color-white-300);
+		}
+
+		a {
+			display: block;
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 2.2rem;
+			line-height: 3rem;
+			color: var(--color-cyan-500);
+			text-decoration: underline;
+		}
+
+		button {
+			display: block;
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 2.2rem;
+			line-height: 5rem;
+			background-color: var(--color-yellow-400);
+			padding: 0 3rem;
+			border: 0.1rem solid var(--background-color);
+			border-radius: 0.4rem;
+			color: var(--color-black-700);
+			text-align: center;
+			text-transform: uppercase;
+
+			&:hover {
+				background-color: var(--main-color-hover);
+			}
+		}
+
+		label {
+			display: block;
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 2.2rem;
+			line-height: 3rem;
+			color: var(--color-white-300);
+		}
+
+		input {
+			display: block;
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 2.2rem;
+			line-height: 4rem;
+			padding: 0 1rem;
+			border: 0.1rem solid var(--color-black-400);
+			border-radius: 0.4rem;
+			box-sizing: border-box;
+			background-color: var(--color-white-300);
+			box-shadow: inset 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+			color: var(--color-black-300);
+		}
+
+		table {
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 2rem;
+			line-height: 2.3rem;
+			width: 100%;
+			color: var(--color-white-300);
+		}
+
+		p {
+			display: block;
+			margin: 0 auto calc(var(--base-gutter) * 2);
+			font-size: 2.2rem;
+			line-height: 3.5rem;
+			font-weight: 300;
+			text-align: left;
+			color: var(--color-gray-400);
+		}
+	}
+
+	&[class*="-03"] {
+		side-by-side {
+			h6 {
+				font-family: var(--font-family--base);
+				font-size: 3.5rem;
+				font-weight: 100;
+				line-height: 4rem;
+			}
+
+			a {
+				text-decoration: none;
+				color: var(--color-yellow-400);
+			}
+
+			button {
+				border-radius: 3rem;
+				background-color: var(--color-red-400);
+				font-size: 2.4rem;
+				font-weight: 500;
+				line-height: 6rem;
+			}
+
+			label {
+				font-weight: 100;
+				font-style: italic;
+			}
+
+			table {
+				width: auto;
+				font-size: 1.5rem;
+				line-height: 1.8rem;
+				color: var(--color-gray-400);
+			}
+
+			p {
+				font-size: 1.4rem;
+				color: var(--color-green-500);
+			}
+		}
+	}
+}

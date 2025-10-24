@@ -1,0 +1,69 @@
+<section class="slide-rendering-03">
+  <header data-id="slide-header">
+    <h5 data-id="slide-title">Font <mark>Smoothing</mark></h5>
+  </header>
+  <example-wrapper class="font-smoothing--example">
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="fs-none">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-5">
+              .example {
+                // Turns font smoothing off
+                // Displays text with jagged sharp edges
+                -webkit-font-smoothing: none;
+                -moz-osx-font-smoothing: none;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="fs-aa">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-4">
+              .example {
+                // Smooth the font on the level of the pixel
+                // For light text on dark backgrounds makes it look lighter
+                -webkit-font-smoothing: antialiased;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+    <side-by-side height="auto" class="fragment">
+      <left>
+        <example class="fs-subpixel-aa">
+          <p>this is a text paragraph</p>
+        </example>
+      </left>
+      <right>
+        <example code>
+          <pre>
+            <code class="language-scss hljs" data-trim data-line-numbers="2-5">
+              .example {
+                // On non-retina displays text will be sharper
+                // (the risk is to have fonts looking a bit bolder)
+                -webkit-font-smoothing: subpixel-antialiased;
+                -moz-osx-font-smoothing: greyscale;
+              }
+            </code>
+          </pre>
+        </example>
+      </right>
+    </side-by-side>
+  </example-wrapper>
+</section>
